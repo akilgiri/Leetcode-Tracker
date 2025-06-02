@@ -1,4 +1,4 @@
-# Last updated: 6/2/2025, 7:09:28 AM
+# Last updated: 6/2/2025, 7:10:15 AM
 class Solution:
     def findDiagonalOrder(self, nums: List[List[int]]) -> List[int]:
         groups = defaultdict(list)
@@ -9,7 +9,7 @@ class Solution:
                 print(i,j)
                 groups[i+j].append(nums[i][j])
 
-        for g in groups.values():
-            result += reversed(g)
+        for g in groups:
+            result += reversed(groups[g])
 
         return result
